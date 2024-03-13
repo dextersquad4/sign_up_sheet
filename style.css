@@ -184,8 +184,9 @@ input {
 }
 
 
-input:focus {
+input:focus, input:focus:invalid {
     border: 5px solid blue;
+
 }
 
 input:invalid {
