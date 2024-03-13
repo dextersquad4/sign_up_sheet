@@ -11,6 +11,17 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@keyframes rotateIn {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+
 :root {
     --banner-width: 592px;
     --regular-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -116,10 +127,13 @@ img:hover {
     display: flex;
     flex-direction: column;
     background-color: rgb(163, 163, 163);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 3px 10px 10px rgba(0, 0, 0, 0.15);
     width: 45vw;
     height: 45vh;
-    border-radius: 10px;   
+    border-radius: 10px; 
+    position: relative;
+    animation: flyIn 3s ease-in-out;
+    animation: rotateIn 3s ease-in-out;
 }
 
 .form-title {
@@ -128,6 +142,7 @@ img:hover {
     font-weight: 600;
     font-size: 26px;
     text-align: center;
+    margin-bottom: 25px;
 
 }
 
@@ -136,14 +151,18 @@ img:hover {
     display: flex;
     gap: 10vw;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 #first-column, #second-column {
+    gap: 10px;
     display: flex;
     flex-direction: column;
 }
 
-
+#first-column > input, #second-column > input {
+    margin-bottom: 25px;
+}
 .form {
     display: flex;
     flex-direction: column;
@@ -152,14 +171,52 @@ img:hover {
     background-color: rgb(223, 223, 223);
 }
 
+label {
+    font-family: 'rustic-normal';
+    position: relative;
+}
+
+input {
+    padding: 5px 12px;
+    border-radius: 4px;
+    border-color: white;
+    width: 10vw;
+}
+
+
+input:focus {
+    border: 5px solid blue;
+}
+
+input:invalid {
+    border: 5px solid red;
+}
+
+#bottom-half {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+
 .submit-button-container {
     padding: 40px 0;
+}
+
+button {
+    padding: 12px 24px;
+    background: linear-gradient(to right, rgb(0, 8, 255), red);
+    border-radius: 10px;
+    color: beige;
+    font-weight: 800;
+
 }
 
 footer {
     display: flex;
     justify-content: center;
     padding: 16px 8px;
-    background-color: rgb(223, 223, 223);
+    background-color: rgb(163, 163, 163);
     margin-top: auto;
 }
